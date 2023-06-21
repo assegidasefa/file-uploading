@@ -16,7 +16,7 @@ function FileUploader() {
     // You can use libraries like axios or fetch to make the request
 
     // Example using axios:
-    axios.post('/upload', formData)
+    axios.post('http://localhost:4000/api/upload', formData)
       .then(response => {
         // Handle successful upload
         console.log('File uploaded successfully');
@@ -28,9 +28,12 @@ function FileUploader() {
   };
 
   return (
-    <div className='w-full bg-yellow-300 h-full'>
+      <div className='h-screen'>
+    <div className='w-full bg-gray-100 h-full flex flex-col justify-center items-center gap-4'>
+
       <input type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload</button>
+      <button onClick={handleUpload} className='bg-blue-300 w-36 rounded-lg hover:scale-110'>Upload</button>
+      </div>
     </div>
   );
 }
